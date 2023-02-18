@@ -1,0 +1,115 @@
+%https://lpn-doc-sphinx-primer-devel.readthedocs.io/extensions/tikz/tikztiming.html
+\documentclass[tikz, subpreambles=true]{standalone}
+\usepackage{tikz}
+\usepackage{tikz-timing}
+\begin{document}
+	\begin{tikztimingtable}
+		\tikzset{% Environment Config
+			scale=2.5,
+			timing/slope=0.1,
+			timing/rowdist=3ex,
+		}
+		
+		%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%%
+		%% Drawing
+		%%
+		
+		\textnormal{SPI Select} & 2H 17L 6H     17L  8H{ } \\
+		\textnormal{SPI Clock}  & 3L  HL 14{C} 7L{ }     HL 14{C} 8L{ } \\
+		\textnormal{SPI MOSI}   & 3U [fill=yellow]2D{U}2D{U}2D{U}2D{U}[fill=green]2D{0}2D{1}2D{0}[fill=orange]2D{0}
+		[fill=gray]7U{ }
+		[fill=yellow]2D{U}2D{U}2D{U}2D{U}2D{U}2D{U}2D{U}2D{U}
+		[fill=gray]8U{ }
+		\\
+		\textnormal{SPI MISO}   & 3U 
+		[fill=cyan]2D{$D_{R_{\textcolor{gray}{X}}}$}2D{$D_{R_{\textcolor{gray}{X}}}$}2D{$D_{R_{\textcolor{gray}{X}}}$}2D{$D_{R_{\textcolor{gray}{X}}}$}2D{$D_{R_{\textcolor{gray}{X}}}$}2D{$D_{R_{\textcolor{gray}{X}}}$}2D{$D_{R_{\textcolor{gray}{X}}}$}2D{$D_{R_{\textcolor{gray}{X}}}$}
+		[fill=gray]7U{ }
+		[fill=pink]2D{$D_{R_3}$}2D{$D_{R_3}$}2D{$D_{R_3}$}2D{$D_{R_3}$}2D{$D_{R_3}$}2D{$D_{R_3}$}2D{$D_{R_3}$}2D{$D_{R_3}$}
+		[fill=gray]8U{ }
+		\\
+		% \textnormal{UART Data}  & 1U [fill=green]2D{Start}
+		%                              [fill=yellow]2D{B0}2D{B1}2D{B2}2D{B3}2D{B4}2D{B5}2D{B6}2D{B7}
+		%                              [fill=magenta!60]2D{Parity}
+		%                              [fill=red!70]2D{Stop}2D{Stop}
+		%                              [fill=gray]U{ } \\
+		%
+		% there must NOT be an uncommented line before \extracode!
+		%
+		\extracode
+		% interconnection
+		% table grid
+		\begin{pgfonlayer}{background}
+			\vertlines[help lines,red]{1,3,5,...,13,15,17,...,\twidth}
+		\end{pgfonlayer}
+		\tablegrid[fill=red,green!25,step=1]
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+%		\textnormal{SPI Select} & 1U 24L     24L  U{ } \\
+%		\textnormal{SPI Clock}  & 3U  HL 14{C} 7U{ }     HL 14{C} 8U{ } \\
+%		\textnormal{SPI MOSI}   & 3U [fill=yellow]2D{U}2D{U}2D{U}2D{U}[fill=green]2D{0}2D{1}2D{0}[fill=orange]2D{1}
+%		[fill=gray]7U{ }
+%		[fill=yellow]2D{U}2D{U}2D{U}2D{U}2D{U}2D{U}2D{U}2D{U}
+%		[fill=gray]8U{ }
+%		\\
+%		\textnormal{SPI MISO}   & 3U 
+%		[fill=yellow]2D{$R_0$}2D{$R_0$}2D{$R_0$}2D{$R_0$}2D{$R_0$}2D{$R_0$}2D{$R_0$}2D{$R_0$}
+%		[fill=gray]7U{ }
+%		[fill=yellow]2D{$D_R$}2D{$D_R$}2D{$D_R$}2D{$D_R$}2D{$D_R$}2D{$D_R$}2D{$D_R$}2D{$D_R$}
+%		[fill=gray]8U{ }
+%		\\
+%		% \textnormal{UART Data}  & 1U [fill=green]2D{Start}
+%		%                              [fill=yellow]2D{B0}2D{B1}2D{B2}2D{B3}2D{B4}2D{B5}2D{B6}2D{B7}
+%		%                              [fill=magenta!60]2D{Parity}
+%		%                              [fill=red!70]2D{Stop}2D{Stop}
+%		%                              [fill=gray]U{ } \\
+%		%
+%		% there must NOT be an uncommented line before \extracode!
+%		%
+%		\extracode
+%		% interconnection
+%		% table grid
+%		\begin{pgfonlayer}{background}
+%			\vertlines[help lines,red]{1,3,5,...,13,15,17,...,\twidth}
+%		\end{pgfonlayer}
+%		\tablegrid[fill=red,green!25,step=1]
+		
+		%%
+		%%
+		%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+	\end{tikztimingtable}
+\end{document}
